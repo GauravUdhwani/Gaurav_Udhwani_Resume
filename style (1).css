@@ -1,0 +1,396 @@
+/* Gaurav Udhwani — CV stylesheet
+   Designed for the resume sections: Summary, Experience, Skills,
+   Projects, Education and Certifications.
+   Keep this file in the same folder as index.html. */
+
+:root {
+  --navy: #18324b;
+  --teal: #16758a;
+  --ink: #263442;
+  --muted: #647382;
+  --line: #d7e0e7;
+  --soft: #f2f7f9;
+  --paper: #ffffff;
+  --page-bg: #eaf0f4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 32px 16px;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.48;
+  -webkit-font-smoothing: antialiased;
+}
+
+.resume {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 46px 54px;
+  background: var(--paper);
+  box-shadow: 0 10px 34px rgba(24, 50, 75, 0.10);
+}
+
+/* Header and contact details */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 22px;
+  padding: 0 0 19px;
+  border-bottom: 3px solid var(--teal);
+}
+
+.eyebrow {
+  margin: 0 0 6px;
+  color: var(--teal);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1.45px;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  color: var(--navy);
+  font-size: clamp(30px, 4.5vw, 39px);
+  font-weight: 750;
+  line-height: 1.08;
+  letter-spacing: -1.1px;
+}
+
+.role {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  margin: 0;
+  padding-bottom: 2px;
+  font-size: 11.5px;
+  font-style: normal;
+  white-space: nowrap;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Section headings */
+section {
+  margin-top: 22px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.15px;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+h2::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+p {
+  margin: 0;
+}
+
+/* Work history */
+.job,
+.project {
+  margin-top: 14px;
+}
+
+.job:first-of-type,
+.project:first-of-type {
+  margin-top: 0;
+}
+
+.job-heading,
+.education {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.company {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.date {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+ul {
+  margin: 7px 0 0;
+  padding-left: 17px;
+}
+
+li {
+  margin: 3px 0;
+  padding-left: 2px;
+}
+
+li::marker {
+  color: var(--teal);
+}
+
+/* Skills: compact panels to group the CV's technical categories */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 12px;
+}
+
+.skills > div {
+  min-width: 0;
+  padding: 8px 10px;
+  border-left: 3px solid var(--teal);
+  background: var(--soft);
+  break-inside: avoid;
+}
+
+.skills h3 {
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+
+.skills p {
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.4;
+}
+
+/* Projects and education */
+.project h3 {
+  color: var(--navy);
+}
+
+.education p {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11.5px;
+}
+
+.certifications {
+  margin-top: 0;
+}
+
+/* Footer */
+footer {
+  margin-top: 25px;
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  text-align: center;
+}
+
+footer span {
+  padding: 0 5px;
+  color: var(--teal);
+}
+
+/* Tablet and mobile */
+@media (max-width: 680px) {
+  body {
+    padding: 0;
+    background: var(--paper);
+  }
+
+  .resume {
+    width: 100%;
+    padding: 28px 22px;
+    box-shadow: none;
+  }
+
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact {
+    align-items: flex-start;
+    white-space: normal;
+  }
+
+  .job-heading,
+  .education {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+  }
+
+  section {
+    margin-top: 20px;
+  }
+}
+
+/* Print / Save as PDF */
+@page {
+  size: A4;
+  margin: 11mm 12mm;
+}
+
+@media print {
+  html,
+  body {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    color: #202b35;
+    font-size: 9pt;
+    line-height: 1.38;
+  }
+
+  .resume {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    box-shadow: none;
+  }
+
+  .header {
+    padding-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 27pt;
+  }
+
+  .role {
+    font-size: 11pt;
+  }
+
+  .contact {
+    font-size: 8.5pt;
+  }
+
+  section {
+    margin-top: 15px;
+  }
+
+  h2 {
+    margin-bottom: 7px;
+    font-size: 9.5pt;
+  }
+
+  h3 {
+    font-size: 9.5pt;
+  }
+
+  .company,
+  .education p {
+    font-size: 8.5pt;
+  }
+
+  .date {
+    font-size: 8pt;
+  }
+
+  .job,
+  .project {
+    margin-top: 10px;
+  }
+
+  ul {
+    margin-top: 5px;
+    padding-left: 15px;
+  }
+
+  li {
+    margin: 2px 0;
+  }
+
+  .skills {
+    gap: 6px 9px;
+  }
+
+  .skills > div {
+    padding: 6px 8px;
+    background: #f5f8fa !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .skills h3 {
+    font-size: 8.5pt;
+  }
+
+  .skills p {
+    font-size: 8pt;
+  }
+
+  .job-heading,
+  .education {
+    break-inside: avoid;
+  }
+
+  .skills > div {
+    break-inside: avoid;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  footer {
+    margin-top: 16px;
+    padding-top: 7px;
+  }
+}
